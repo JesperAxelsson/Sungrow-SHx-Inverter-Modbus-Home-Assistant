@@ -610,89 +610,89 @@ modbus:
         scan_interval: *scan_interval_fast
 
       # https://www.photovoltaikforum.com/thread/166134-daten-lesen-vom-sungrow-wechselrichtern-modbus/?postID=3324464#post3324464
-      - name: Sungrow Meter phase A voltage
-        unique_id: sg_meter_phase_a_voltage
-        device_address: !secret sungrow_modbus_device_address
-        address: 5740 # reg 5741
-        input_type: input
-        data_type: int16
-        nan_value: 0x7FFF
-        precision: 1
-        unit_of_measurement: V
-        device_class: voltage
-        state_class: measurement
-        scale: 0.1
-        scan_interval: *scan_interval_fast
+#      - name: Sungrow Meter phase A voltage
+#        unique_id: sg_meter_phase_a_voltage
+#        device_address: !secret sungrow_modbus_device_address
+#        address: 5740 # reg 5741
+#        input_type: input
+#        data_type: int16
+#        nan_value: 0x7FFF
+#        precision: 1
+#        unit_of_measurement: V
+#        device_class: voltage
+#        state_class: measurement
+#        scale: 0.1
+#        scan_interval: *scan_interval_fast
 
-      - name: Sungrow Meter phase B voltage
-        unique_id: sg_meter_phase_b_voltage
-        device_address: !secret sungrow_modbus_device_address
-        address: 5741 # reg 5742
-        input_type: input
-        data_type: int16
-        nan_value: 0x7FFF
-        precision: 1
-        unit_of_measurement: V
-        device_class: voltage
-        state_class: measurement
-        scale: 0.1
-        scan_interval: *scan_interval_fast
+#      - name: Sungrow Meter phase B voltage
+#        unique_id: sg_meter_phase_b_voltage
+#        device_address: !secret sungrow_modbus_device_address
+#        address: 5741 # reg 5742
+#        input_type: input
+#        data_type: int16
+#        nan_value: 0x7FFF
+#        precision: 1
+#        unit_of_measurement: V
+#        device_class: voltage
+#        state_class: measurement
+#        scale: 0.1
+#        scan_interval: *scan_interval_fast
 
-      - name: Sungrow Meter phase C voltage
-        unique_id: sg_meter_phase_c_voltage
-        device_address: !secret sungrow_modbus_device_address
-        address: 5742 # reg 5743
-        input_type: input
-        data_type: int16
-        nan_value: 0x7FFF
-        precision: 1
-        unit_of_measurement: V
-        device_class: voltage
-        state_class: measurement
-        scale: 0.1
-        scan_interval: *scan_interval_fast
+#      - name: Sungrow Meter phase C voltage
+#        unique_id: sg_meter_phase_c_voltage
+#        device_address: !secret sungrow_modbus_device_address
+#        address: 5742 # reg 5743
+#        input_type: input
+#        data_type: int16
+#        nan_value: 0x7FFF
+#        precision: 1
+#        unit_of_measurement: V
+#        device_class: voltage
+#        state_class: measurement
+#        scale: 0.1
+#        scan_interval: *scan_interval_fast
 
-      - name: Sungrow Meter phase A current
-        unique_id: sg_meter_phase_a_current
-        device_address: !secret sungrow_modbus_device_address
-        address: 5743 # reg 5744
-        input_type: input
-        data_type: uint16
-        nan_value: 0xFFFF
-        precision: 2
-        unit_of_measurement: A
-        device_class: current
-        state_class: measurement
-        scale: 0.01
-        scan_interval: *scan_interval_fast
+#      - name: Sungrow Meter phase A current
+#        unique_id: sg_meter_phase_a_current
+#        device_address: !secret sungrow_modbus_device_address
+#        address: 5743 # reg 5744
+#        input_type: input
+#        data_type: uint16
+#        nan_value: 0xFFFF
+#        precision: 2
+#        unit_of_measurement: A
+#        device_class: current
+#        state_class: measurement
+#        scale: 0.01
+#        scan_interval: *scan_interval_fast
 
-      - name: Sungrow Meter phase B current
-        unique_id: sg_meter_phase_b_current
-        device_address: !secret sungrow_modbus_device_address
-        address: 5744 # reg 5745
-        input_type: input
-        data_type: uint16
-        nan_value: 0xFFFF
-        precision: 2
-        unit_of_measurement: A
-        device_class: current
-        state_class: measurement
-        scale: 0.01
-        scan_interval: *scan_interval_fast
+#      - name: Sungrow Meter phase B current
+#        unique_id: sg_meter_phase_b_current
+#        device_address: !secret sungrow_modbus_device_address
+#        address: 5744 # reg 5745
+#        input_type: input
+#        data_type: uint16
+#        nan_value: 0xFFFF
+#        precision: 2
+#        unit_of_measurement: A
+#        device_class: current
+#        state_class: measurement
+#        scale: 0.01
+#        scan_interval: *scan_interval_fast
 
-      - name: Sungrow Meter phase C current
-        unique_id: sg_meter_phase_c_current
-        device_address: !secret sungrow_modbus_device_address
-        address: 5745 # reg 5746
-        input_type: input
-        data_type: uint16
-        nan_value: 0xFFFF
-        precision: 2
-        unit_of_measurement: A
-        device_class: current
-        state_class: measurement
-        scale: 0.01
-        scan_interval: *scan_interval_fast
+#      - name: Sungrow Meter phase C current
+#        unique_id: sg_meter_phase_c_current
+#        device_address: !secret sungrow_modbus_device_address
+#        address: 5745 # reg 5746
+#        input_type: input
+#        data_type: uint16
+#        nan_value: 0xFFFF
+#        precision: 2
+#        unit_of_measurement: A
+#        device_class: current
+#        state_class: measurement
+#        scale: 0.01
+#        scan_interval: *scan_interval_fast
 
       # NOTE: in old modbus doc version this was called "system state"
       # but has been renamed to "running state"
@@ -1447,8 +1447,8 @@ modbus:
 
 sensor:
   - platform: filter
-    name: Sungrow "Daily consumed energy (filtered)"
-    entity_id: sensor.daily_consumed_energy
+    name: "Sungrow Daily consumed energy (filtered)"
+    entity_id: sensor.sungrow_daily_consumed_energy
     unique_id: sg_daily_consumed_energy_filtered
     filters:
       - filter: time_simple_moving_average
@@ -1463,95 +1463,95 @@ template:
       # bit 0 — PV generating
       - name: Sungrow PV generating
         unique_id: sg_pv_generating
-        availability: "{{ states('sensor.power_flow_status') not in ['unknown','unavailable'] }}"
-        state: "{{ states('sensor.power_flow_status')|int |bitwise_and(0x1) }}"
+        availability: "{{ states('sensor.sungrow_power_flow_status') not in ['unknown','unavailable'] }}"
+        state: "{{ states('sensor.sungrow_power_flow_status')|int |bitwise_and(0x1) }}"
 
       - name: Sungrow PV generating (delay)
         unique_id: sg_pv_generating_delay
-        availability: "{{ states('binary_sensor.pv_generating') not in ['unknown','unavailable'] }}"
+        availability: "{{ states('binary_sensor.sungrow_pv_generating') not in ['unknown','unavailable'] }}"
         delay_on:
           seconds: 60
-        state: "{{ states('binary_sensor.pv_generating') }}"
+        state: "{{ states('binary_sensor.sungrow_pv_generating') }}"
 
       # bit 1 — Battery charging
       - name: Sungrow Battery charging
         unique_id: sg_battery_charging
-        availability: "{{ states('sensor.power_flow_status') not in ['unknown','unavailable'] }}"
-        state: "{{ states('sensor.power_flow_status')|int |bitwise_and(0x2) }}"
+        availability: "{{ states('sensor.sungrow_power_flow_status') not in ['unknown','unavailable'] }}"
+        state: "{{ states('sensor.sungrow_power_flow_status')|int |bitwise_and(0x2) }}"
 
       - name: Sungrow Battery charging (delay)
         unique_id: sg_battery_charging_delay
-        availability: "{{ states('binary_sensor.battery_charging') not in ['unknown','unavailable'] }}"
+        availability: "{{ states('binary_sensor.sungrow_battery_charging') not in ['unknown','unavailable'] }}"
         delay_on:
           seconds: 60
-        state: "{{ states('binary_sensor.battery_charging') }}"
+        state: "{{ states('binary_sensor.sungrow_battery_charging') }}"
 
       # bit 2 — Battery discharging
       - name: Sungrow Battery discharging
         unique_id: sg_battery_discharging
-        availability: "{{ states('sensor.power_flow_status') not in ['unknown','unavailable'] }}"
-        state: "{{ states('sensor.power_flow_status')|int |bitwise_and(0x4) }}"
+        availability: "{{ states('sensor.sungrow_power_flow_status') not in ['unknown','unavailable'] }}"
+        state: "{{ states('sensor.sungrow_power_flow_status')|int |bitwise_and(0x4) }}"
 
       - name: Sungrow Battery discharging (delay)
         unique_id: sg_battery_discharging_delay
-        availability: "{{ states('binary_sensor.battery_discharging') not in ['unknown','unavailable'] }}"
+        availability: "{{ states('binary_sensor.sungrow_battery_discharging') not in ['unknown','unavailable'] }}"
         delay_on:
           seconds: 60
-        state: "{{ states('binary_sensor.battery_discharging') }}"
+        state: "{{ states('binary_sensor.sungrow_battery_discharging') }}"
 
       # bit 3 — Positive Load Power
       - name: Sungrow Positive Load Power
         unique_id: sg_positive_load_power
-        availability: "{{ states('sensor.power_flow_status') not in ['unknown','unavailable'] }}"
-        state: "{{ states('sensor.power_flow_status')|int |bitwise_and(0x8) }}"
+        availability: "{{ states('sensor.sungrow_power_flow_status') not in ['unknown','unavailable'] }}"
+        state: "{{ states('sensor.sungrow_power_flow_status')|int |bitwise_and(0x8) }}"
 
       - name: Sungrow Positive Load Power (delay)
         unique_id: sg_positive_load_power_delay
-        availability: "{{ states('binary_sensor.positive_load_power') not in ['unknown','unavailable'] }}"
+        availability: "{{ states('binary_sensor.sungrow_positive_load_power') not in ['unknown','unavailable'] }}"
         delay_on:
           seconds: 60
-        state: "{{ states('binary_sensor.positive_load_power') }}"
+        state: "{{ states('binary_sensor.sungrow_positive_load_power') }}"
 
       # bit 4 modbus spec "feed-in power"
       - name: Sungrow Exporting Power
         unique_id: sg_exporting_power
-        availability: "{{ states('sensor.power_flow_status') not in ['unknown','unavailable'] }}"
-        state: "{{ states('sensor.power_flow_status')|int |bitwise_and(0x10) }}"
+        availability: "{{ states('sensor.sungrow_power_flow_status') not in ['unknown','unavailable'] }}"
+        state: "{{ states('sensor.sungrow_power_flow_status')|int |bitwise_and(0x10) }}"
 
       - name: Sungrow Exporting Power (delay)
         unique_id: sg_exporting_power_delay
-        availability: "{{ states('binary_sensor.exporting_power') not in ['unknown','unavailable'] }}"
+        availability: "{{ states('binary_sensor.sungrow_exporting_power') not in ['unknown','unavailable'] }}"
         delay_on:
           seconds: 60
-        state: "{{ states('binary_sensor.exporting_power') }}"
+        state: "{{ states('binary_sensor.sungrow_exporting_power') }}"
 
       # bit 5 modbus spec "import power from grid"
       - name: Sungrow Importing Power
         unique_id: sg_importing_power
-        availability: "{{ states('sensor.power_flow_status') not in ['unknown','unavailable'] }}"
-        state: "{{ states('sensor.power_flow_status')|int |bitwise_and(0x20) }}"
+        availability: "{{ states('sensor.sungrow_power_flow_status') not in ['unknown','unavailable'] }}"
+        state: "{{ states('sensor.sungrow_power_flow_status')|int |bitwise_and(0x20) }}"
 
       - name: Sungrow Importing Power (delay)
         unique_id: sg_importing_power_delay
-        availability: "{{ states('binary_sensor.importing_power') not in ['unknown','unavailable'] }}"
+        availability: "{{ states('binary_sensor.sungrow_importing_power') not in ['unknown','unavailable'] }}"
         delay_on:
           seconds: 60
-        state: "{{ states('binary_sensor.importing_power') }}"
+        state: "{{ states('binary_sensor.sungrow_importing_power') }}"
 
       # bit 6 is reserved
 
       # bit 7 — Negative load power
       - name: Sungrow Negative Load Power
         unique_id: sg_negative_load_power
-        availability: "{{ states('sensor.power_flow_status') not in ['unknown','unavailable'] }}"
-        state: "{{ states('sensor.power_flow_status')|int |bitwise_and(0x80) }}"
+        availability: "{{ states('sensor.sungrow_power_flow_status') not in ['unknown','unavailable'] }}"
+        state: "{{ states('sensor.sungrow_power_flow_status')|int |bitwise_and(0x80) }}"
 
       - name: Sungrow Negative Load Power (delay)
         unique_id: sg_negative_load_power_delay
-        availability: "{{ states('binary_sensor.negative_load_power') not in ['unknown','unavailable'] }}"
+        availability: "{{ states('binary_sensor.sungrow_negative_load_power') not in ['unknown','unavailable'] }}"
         delay_on:
           seconds: 60
-        state: "{{ states('binary_sensor.negative_load_power') }}"
+        state: "{{ states('binary_sensor.sungrow_negative_load_power') }}"
 
   ####################
   # template: number
@@ -1563,9 +1563,9 @@ template:
         min: 0
         max: 50 # max value is defined by modbus spec
         step: 1
-        availability: "{{ states('sensor.battery_min_soc') | is_number }}"
+        availability: "{{ states('sensor.sungrow_battery_min_soc') | is_number }}"
         # modbus --> UI
-        state: "{{ states('sensor.battery_min_soc') }}"
+        state: "{{ states('sensor.sungrow_battery_min_soc') }}"
         # UI --> modbus
         set_value:
           - action: modbus.write_register
@@ -1585,9 +1585,9 @@ template:
         min: 50 # min value is defined by modbus spec
         max: 100
         step: 1
-        availability: "{{ states('sensor.battery_max_soc') | is_number }}"
+        availability: "{{ states('sensor.sungrow_battery_max_soc') | is_number }}"
         # modbus --> UI
-        state: "{{ states('sensor.battery_max_soc') }}"
+        state: "{{ states('sensor.sungrow_battery_max_soc') }}"
         # UI --> modbus
         set_value:
           - action: modbus.write_register
@@ -1599,7 +1599,7 @@ template:
           # manually refresh modbus register
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.battery_max_soc
+              entity_id: sensor.sungrow_battery_max_soc
 
       - name: Sungrow Battery Reserved SoC for Backup
         unique_id: uid_battery_reserved_soc_for_backup
@@ -1607,9 +1607,9 @@ template:
         min: 0
         max: 100
         step: 1
-        availability: "{{ states('sensor.battery_reserved_soc_for_backup') | is_number }}"
+        availability: "{{ states('sensor.sungrow_battery_reserved_soc_for_backup') | is_number }}"
         # modbus --> UI
-        state: "{{ states('sensor.battery_reserved_soc_for_backup') }}"
+        state: "{{ states('sensor.sungrow_battery_reserved_soc_for_backup') }}"
         # UI --> modbus
         set_value:
           - action: modbus.write_register
@@ -1621,7 +1621,7 @@ template:
           # manually refresh modbus register
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.battery_reserved_soc_for_backup
+              entity_id: sensor.sungrow_battery_reserved_soc_for_backup
 
       # This threshold is compared against the currently achievable charging power, not just against the currently available surplus.
       # If this is set higher than the maximum charging power of the battery, charging will not start.
@@ -1637,9 +1637,9 @@ template:
         # charging and discharging. I am pretty confident, that a max: value for the number is ok with 1000W.
         # Please open an issue, if other values are needed.
         step: 10
-        availability: "{{ states('sensor.battery_charging_start_power') | is_number }}"
+        availability: "{{ states('sensor.sungrow_battery_charging_start_power') | is_number }}"
         # modbus --> UI
-        state: "{{ states('sensor.battery_charging_start_power') }}"
+        state: "{{ states('sensor.sungrow_battery_charging_start_power') }}"
         # UI --> modbus
         set_value:
           - action: modbus.write_register
@@ -1651,7 +1651,7 @@ template:
           # manually refresh modbus register
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.battery_charging_start_power
+              entity_id: sensor.sungrow_battery_charging_start_power
 
       - name: Sungrow Battery discharging start power
         unique_id: uid_battery_discharging_start_power
@@ -1662,9 +1662,9 @@ template:
         # charging and discharging. I am pretty confident, that a max: value for the number is ok with 1000W
         # Please open an issue, if other values are needed.
         step: 10
-        availability: "{{ states('sensor.battery_discharging_start_power') | is_number }}"
+        availability: "{{ states('sensor.sungrow_battery_discharging_start_power') | is_number }}"
         # modbus --> UI
-        state: "{{ states('sensor.battery_discharging_start_power') }}"
+        state: "{{ states('sensor.sungrow_battery_discharging_start_power') }}"
         # UI --> modbus
         set_value:
           - action: modbus.write_register
@@ -1676,7 +1676,7 @@ template:
           # manually refresh modbus register
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.battery_discharging_start_power
+              entity_id: sensor.sungrow_battery_discharging_start_power
 
       - name: Sungrow Battery forced charge discharge power
         unique_id: uid_battery_forced_charge_discharge_power
@@ -1684,9 +1684,9 @@ template:
         min: 0
         max: !secret sungrow_modbus_battery_max_power
         step: 100
-        availability: "{{ states('sensor.battery_forced_charge_discharge_power') | is_number }}"
+        availability: "{{ states('sensor.sungrow_battery_forced_charge_discharge_power') | is_number }}"
         # modbus --> UI
-        state: "{{ states('sensor.battery_forced_charge_discharge_power') }}"
+        state: "{{ states('sensor.sungrow_battery_forced_charge_discharge_power') }}"
         # UI --> modbus
         set_value:
           - action: modbus.write_register
@@ -1698,7 +1698,7 @@ template:
           # manually refresh modbus register
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.battery_forced_charge_discharge_power
+              entity_id: sensor.sungrow_battery_forced_charge_discharge_power
 
       - name: Sungrow Battery max charge power
         unique_id: uid_battery_max_charge_power
@@ -1706,9 +1706,9 @@ template:
         min: 10 # 10W minimum defined in datasheet: 0.01 kW
         max: !secret sungrow_modbus_battery_max_power
         step: 100
-        availability: "{{ states('sensor.battery_max_charge_power') | is_number }}"
+        availability: "{{ states('sensor.sungrow_battery_max_charge_power') | is_number }}"
         # modbus --> UI
-        state: "{{ states('sensor.battery_max_charge_power') }}"
+        state: "{{ states('sensor.sungrow_battery_max_charge_power') }}"
         # UI --> modbus
         set_value:
           - action: modbus.write_register
@@ -1720,7 +1720,7 @@ template:
           # manually refresh modbus register
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.battery_max_charge_power
+              entity_id: sensor.sungrow_battery_max_charge_power
 
       - name: Sungrow Battery max discharge power
         unique_id: uid_battery_max_discharge_power
@@ -1728,9 +1728,9 @@ template:
         min: 10 # 10W minimum defined in datasheet: 0.01 kW
         max: !secret sungrow_modbus_battery_max_power
         step: 100
-        availability: "{{ states('sensor.battery_max_discharge_power') | is_number }}"
+        availability: "{{ states('sensor.sungrow_battery_max_discharge_power') | is_number }}"
         # modbus --> UI
-        state: "{{ states('sensor.battery_max_discharge_power') }}"
+        state: "{{ states('sensor.sungrow_battery_max_discharge_power') }}"
         # UI --> modbus
         set_value:
           - action: modbus.write_register
@@ -1742,7 +1742,7 @@ template:
           # manually refresh modbus register
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.battery_max_discharge_power
+              entity_id: sensor.sungrow_battery_max_discharge_power
 
       - name: Sungrow Export power limit
         unique_id: uid_export_power_limit
@@ -1750,9 +1750,9 @@ template:
         min: "{{ states('sensor.export_power_limit_min') }}"
         max: "{{ states('sensor.export_power_limit_max') }}"
         step: 100
-        availability: "{{ states('sensor.export_power_limit')|is_number and states('sensor.export_power_limit_min')|is_number and states('sensor.export_power_limit_max')|is_number }}"
+        availability: "{{ states('sensor.sungrow_export_power_limit')|is_number and states('sensor.sungrow_export_power_limit_min')|is_number and states('sensor.sungrow_export_power_limit_max')|is_number }}"
         # modbus --> UI
-        state: "{{ states('sensor.export_power_limit') }}"
+        state: "{{ states('sensor.sungrow_export_power_limit') }}"
         # UI --> modbus
         set_value:
           - action: modbus.write_register
@@ -1764,7 +1764,7 @@ template:
           # manually refresh modbus register
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.export_power_limit
+              entity_id: sensor.sungrow_export_power_limit
 
   ####################
   # template: sensor
@@ -1775,16 +1775,16 @@ template:
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.mppt1_voltage')|is_number and states('sensor.mppt1_current')|is_number }}"
-        state: "{{ (states('sensor.mppt1_voltage') | float * states('sensor.mppt1_current') | float) |int }}"
+        availability: "{{ states('sensor.sungrow_mppt1_voltage')|is_number and states('sensor.sungrow_mppt1_current')|is_number }}"
+        state: "{{ (states('sensor.sungrow_mppt1_voltage') | float * states('sensor.sungrow_mppt1_current') | float) |int }}"
 
       - name: Sungrow MPPT2 power
         unique_id: sg_mppt2_power
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.mppt2_voltage')|is_number and states('sensor.mppt2_current')|is_number }}"
-        state: "{{ (states('sensor.mppt2_voltage') | float * states('sensor.mppt2_current') | float) |int }}"
+        availability: "{{ states('sensor.sungrow_mppt2_voltage')|is_number and states('sensor.sungrow_mppt2_current')|is_number }}"
+        state: "{{ (states('sensor.sungrow_mppt2_voltage') | float * states('sensor.sungrow_mppt2_current') | float) |int }}"
 
         # only for SH*T inverters with 3 MPPTs
       - name: Sungrow MPPT3 power
@@ -1792,8 +1792,8 @@ template:
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.mppt3_voltage')|is_number and states('sensor.mppt3_current')|is_number }}"
-        state: "{{ (states('sensor.mppt3_voltage') | float * states('sensor.mppt3_current') | float) |int }}"
+        availability: "{{ states('sensor.sungrow_mppt3_voltage')|is_number and states('sensor.sungrow_mppt3_current')|is_number }}"
+        state: "{{ (states('sensor.sungrow_mppt3_voltage') | float * states('sensor.sungrow_mppt3_current') | float) |int }}"
 
         # only for inverters with 4 MPPTs (SH8|10RS)
       - name: Sungrow MPPT4 power
@@ -1801,39 +1801,39 @@ template:
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.mppt4_voltage')|is_number and states('sensor.mppt4_current')|is_number }}"
-        state: "{{ (states('sensor.mppt4_voltage') | float * states('sensor.mppt4_current') | float) |int }}"
+        availability: "{{ states('sensor.sungrow_mppt4_voltage')|is_number and states('sensor.sungrow_mppt4_current')|is_number }}"
+        state: "{{ (states('sensor.sungrow_mppt4_voltage') | float * states('sensor.sungrow_mppt4_current') | float) |int }}"
 
       - name: Sungrow Phase A power
         unique_id: sg_phase_a_power
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.phase_a_voltage')|is_number and states('sensor.phase_a_current')|is_number }}"
-        state: "{{ (states('sensor.phase_a_voltage') | float * states('sensor.phase_a_current') | float) |int }}"
+        availability: "{{ states('sensor.sungrow_phase_a_voltage')|is_number and states('sensor.sungrow_phase_a_current')|is_number }}"
+        state: "{{ (states('sensor.sungrow_phase_a_voltage') | float * states('sensor.sungrow_phase_a_current') | float) |int }}"
 
       - name: Sungrow Phase B power
         unique_id: sg_phase_b_power
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.phase_b_voltage')|is_number and states('sensor.phase_b_current')|is_number }}"
-        state: "{{ (states('sensor.phase_b_voltage') | float * states('sensor.phase_b_current') | float) |int }}"
+        availability: "{{ states('sensor.sungrow_phase_b_voltage')|is_number and states('sensor.sungrow_phase_b_current')|is_number }}"
+        state: "{{ (states('sensor.sungrow_phase_b_voltage') | float * states('sensor.sungrow_phase_b_current') | float) |int }}"
 
       - name: Sungrow Phase C power
         unique_id: sg_phase_c_power
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.phase_c_voltage')|is_number and states('sensor.phase_c_current')|is_number }}"
-        state: "{{ (states('sensor.phase_c_voltage') | float * states('sensor.phase_c_current') | float) |int }}"
+        availability: "{{ states('sensor.sungrow_phase_c_voltage')|is_number and states('sensor.sungrow_phase_c_current')|is_number }}"
+        state: "{{ (states('sensor.sungrow_phase_c_voltage') | float * states('sensor.sungrow_phase_c_current') | float) |int }}"
 
       - name: Sungrow inverter state
         unique_id: sg_inverter_state
         device_class: enum
-        availability: "{{ states('sensor.running_state_raw') not in ['unknown','unavailable'] }}"
+        availability: "{{ states('sensor.sungrow_running_state_raw') not in ['unknown','unavailable'] }}"
         state: >-
-          {% set invState=states('sensor.running_state_raw')|int %}
+          {% set invState=states('sensor.sungrow_running_state_raw')|int %}
           {% set map = {
             0x0000: 'Running',
             0x0001: 'Stop',
@@ -1929,8 +1929,8 @@ template:
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.battery_power') not in ['unknown','unavailable'] }}"
-        state: "{{ states('sensor.battery_power')|int *-1}}" # sensor.battery_power is negative when charging
+        availability: "{{ states('sensor.sungrow_battery_power') not in ['unknown','unavailable'] }}"
+        state: "{{ states('sensor.sungrow_battery_power')|int *-1}}" # sensor.battery_power is negative when charging
 
       # positive if charging else zero
       - name: Sungrow Battery charging power
@@ -1938,10 +1938,10 @@ template:
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.battery_charging_power_signed') not in ['unknown','unavailable'] }}"
+        availability: "{{ states('sensor.sungrow_battery_charging_power_signed') not in ['unknown','unavailable'] }}"
         state: >-
-          {% if states('sensor.battery_charging_power_signed') |int > 0 %}
-            {{ states('sensor.battery_charging_power_signed') |int}}
+          {% if states('sensor.sungrow_battery_charging_power_signed') |int > 0 %}
+            {{ states('sensor.sungrow_battery_charging_power_signed') |int}}
           {% else %}
             0
           {% endif %}
@@ -1958,8 +1958,8 @@ template:
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.battery_power') not in ['unknown','unavailable'] }}"
-        state: "{{ states('sensor.battery_power')|int}}" # sensor.battery_power is positive when discharging
+        availability: "{{ states('sensor.sungrow_battery_power') not in ['unknown','unavailable'] }}"
+        state: "{{ states('sensor.sungrow_battery_power')|int}}" # sensor.battery_power is positive when discharging
 
       # positive if discharging else zero
       - name: Sungrow Battery discharging power
@@ -1967,10 +1967,10 @@ template:
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.battery_discharging_power_signed') not in ['unknown','unavailable'] }}"
+        availability: "{{ states('sensor.sungrow_battery_discharging_power_signed') not in ['unknown','unavailable'] }}"
         state: >-
-          {% if states('sensor.battery_discharging_power_signed')|int > 0 %}
-            {{ states('sensor.battery_discharging_power_signed')|int }}
+          {% if states('sensor.sungrow_battery_discharging_power_signed')|int > 0 %}
+            {{ states('sensor.sungrow_battery_discharging_power_signed')|int }}
           {% else %}
             0
           {% endif %}
@@ -1981,10 +1981,10 @@ template:
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.export_power_raw') |is_number }}"
+        availability: "{{ states('sensor.sungrow_export_power_raw') |is_number }}"
         state: >-
-          {% if states('sensor.export_power_raw')|int < 0 %}
-            {{ states('sensor.export_power_raw')|int *-1 }}
+          {% if states('sensor.sungrow_export_power_raw')|int < 0 %}
+            {{ states('sensor.sungrow_export_power_raw')|int *-1 }}
           {% else %}
             0
           {% endif %}
@@ -1995,10 +1995,10 @@ template:
         unit_of_measurement: W
         device_class: power
         state_class: measurement
-        availability: "{{ states('sensor.export_power_raw') |is_number }}"
+        availability: "{{ states('sensor.sungrow_export_power_raw') |is_number }}"
         state: >-
-          {% if states('sensor.export_power_raw')|int > 0 %}
-            {{ states('sensor.export_power_raw') }}
+          {% if states('sensor.sungrow_export_power_raw')|int > 0 %}
+            {{ states('sensor.sungrow_export_power_raw') }}
           {% else %}
             0
           {% endif %}
@@ -2006,19 +2006,19 @@ template:
       # If min_soc is set to 15 and max soc is set to 90,
       # this "nominal battery level" will be between 15% and 90%
       # while the "battery level" is between 0 and 100%
-      - name: Sungrow "Battery level (nominal)"
+      - name: "Sungrow Battery level (nominal)"
         unique_id: sg_battery_level_nom
         unit_of_measurement: "%"
         device_class: battery
         state_class: measurement
         availability: >-
-          {{ states('sensor.battery_level') not in ['unknown','unavailable'] 
-          and states('sensor.battery_min_soc') not in ['unknown','unavailable'] 
-          and states('sensor.battery_max_soc') not in ['unknown','unavailable'] }}
+          {{ states('sensor.sungrow_battery_level') not in ['unknown','unavailable'] 
+          and states('sensor.sungrow_battery_min_soc') not in ['unknown','unavailable'] 
+          and states('sensor.sungrow_battery_max_soc') not in ['unknown','unavailable'] }}
         state: >-
-          {% set soc_min = states('sensor.battery_min_soc') | float %}
-          {% set soc_max = states('sensor.battery_max_soc') | float %}
-          {% set soc_cur = states('sensor.battery_level') | float %}
+          {% set soc_min = states('sensor.sungrow_battery_min_soc') | float %}
+          {% set soc_max = states('sensor.sungrow_battery_max_soc') | float %}
+          {% set soc_cur = states('sensor.sungrow_battery_level') | float %}
           {{
             (soc_min + ((soc_max - soc_min) * (soc_cur / 100))) | round(1)
           }}
@@ -2026,39 +2026,39 @@ template:
       # If min_soc is set to 15 and max soc is set to 90,
       # this "nominal battery charge" will be between 15% and 90% of the capacity value,
       # reflecting the limits set by min_soc and max_soc
-      - name: Sungrow "Battery charge (nominal)"
+      - name: "Sungrow Battery charge (nominal)"
         unique_id: sg_battery_charge_nom
         unit_of_measurement: kWh
         device_class: energy_storage
         state_class: measurement
         availability: >-
-          {{ states('sensor.battery_capacity_high_precision') not in ['unknown','unavailable'] 
-          and states('sensor.battery_level_nominal') not in ['unknown','unavailable'] }}
+          {{ states('sensor.sungrow_battery_capacity_high_precision') not in ['unknown','unavailable'] 
+          and states('sensor.sungrow_battery_level_nominal') not in ['unknown','unavailable'] }}
         state: >-
           {{
-            ( states('sensor.battery_capacity_high_precision') | float *
-            states('sensor.battery_level_nominal') | float / 100 )| round(1)
+            ( states('sensor.sungrow_battery_capacity_high_precision') | float *
+            states('sensor.sungrow_battery_level_nominal') | float / 100 )| round(1)
           }}
 
       # this is the actually **usable energy ** of the battery
       # with respect to min/ max soc, but WITHOUT the battery health.
       # If min_soc is set to 15 and max soc is set to 90,
       # this value is 0.75 * capacity
-      - name: Sungrow "Battery charge"
+      - name: "Sungrow Battery charge"
         unique_id: sg_battery_charge
         unit_of_measurement: kWh
         device_class: energy_storage
         state_class: measurement
         availability: >-
-          {{ states('sensor.battery_capacity_high_precision') not in ['unknown','unavailable'] 
-          and states('sensor.battery_level') not in ['unknown','unavailable'] 
-          and states('sensor.battery_min_soc') not in ['unknown','unavailable']
-          and states('sensor.battery_max_soc') not in ['unknown','unavailable'] }}
+          {{ states('sensor.sungrow_battery_capacity_high_precision') not in ['unknown','unavailable'] 
+          and states('sensor.sungrow_battery_level') not in ['unknown','unavailable'] 
+          and states('sensor.sungrow_battery_min_soc') not in ['unknown','unavailable']
+          and states('sensor.sungrow_battery_max_soc') not in ['unknown','unavailable'] }}
         state: >-
           {{ 
-            ( states('sensor.battery_capacity_high_precision')|float 
-            * ( states('sensor.battery_max_soc')|float - states('sensor.battery_min_soc')|float ) /100 
-            * states('sensor.battery_level')|float /100 
+            ( states('sensor.sungrow_battery_capacity_high_precision')|float 
+            * ( states('sensor.sungrow_battery_max_soc')|float - states('sensor.sungrow_battery_min_soc')|float ) /100 
+            * states('sensor.sungrow_battery_level')|float /100 
             ) |round(2)
           }}
 
@@ -2067,18 +2067,18 @@ template:
       # This value is determined by multiplying Battery charge
       # with the health factor (battery_health), which is often a value
       # starting at 100 and decreases over time. Mine is 98% after 2 years.
-      - name: Sungrow "Battery charge (health-rated)"
+      - name: "Sungrow Battery charge (health-rated)"
         unique_id: sg_battery_charge_health_rated
         unit_of_measurement: kWh
         device_class: energy_storage
         state_class: measurement
         availability: >-
-          {{ states('sensor.battery_charge') not in ['unknown','unavailable'] 
-          and states('sensor.battery_state_of_health') not in ['unknown','unavailable'] }}
+          {{ states('sensor.sungrow_battery_charge') not in ['unknown','unavailable'] 
+          and states('sensor.sungrow_battery_state_of_health') not in ['unknown','unavailable'] }}
         state: >-
           {{ 
-            ( states('sensor.battery_charge')|float 
-            * states('sensor.battery_state_of_health')|float / 100 
+            ( states('sensor.sungrow_battery_charge')|float 
+            * states('sensor.sungrow_battery_state_of_health')|float / 100 
             ) |round(2)
           }}
 
@@ -2091,19 +2091,19 @@ template:
         # "measurement" does not work, because it is incompatible with "energy"
         state_class: total
         availability: >-
-          {{ states('sensor.daily_pv_generation') not in ['unknown','unavailable'] 
-          and states('sensor.daily_exported_energy') not in ['unknown','unavailable'] 
-          and states('sensor.daily_imported_energy') not in ['unknown','unavailable']
-          and states('sensor.daily_battery_charge') not in ['unknown','unavailable']
-          and states('sensor.daily_battery_discharge') not in ['unknown','unavailable'] }}
+          {{ states('sensor.sungrow_daily_pv_generation') not in ['unknown','unavailable'] 
+          and states('sensor.sungrow_daily_exported_energy') not in ['unknown','unavailable'] 
+          and states('sensor.sungrow_daily_imported_energy') not in ['unknown','unavailable']
+          and states('sensor.sungrow_daily_battery_charge') not in ['unknown','unavailable']
+          and states('sensor.sungrow_daily_battery_discharge') not in ['unknown','unavailable'] }}
         state: >-
           {{ 
             (
-              states('sensor.daily_pv_generation')|float 
-              - states('sensor.daily_exported_energy')|float 
-              + states('sensor.daily_imported_energy')|float 
-              - states('sensor.daily_battery_charge')|float 
-              + states('sensor.daily_battery_discharge')|float
+              states('sensor.sungrow_daily_pv_generation')|float 
+              - states('sensor.sungrow_daily_exported_energy')|float 
+              + states('sensor.sungrow_daily_imported_energy')|float 
+              - states('sensor.sungrow_daily_battery_charge')|float 
+              + states('sensor.sungrow_daily_battery_discharge')|float
             ) 
           }}
 
@@ -2113,19 +2113,19 @@ template:
         device_class: energy
         state_class: total
         availability: >-
-          {{ states('sensor.total_pv_generation') not in ['unknown','unavailable'] 
-          and states('sensor.total_exported_energy') not in ['unknown','unavailable'] 
-          and states('sensor.total_imported_energy') not in ['unknown','unavailable']
-          and states('sensor.total_battery_charge') not in ['unknown','unavailable']
-          and states('sensor.total_battery_discharge') not in ['unknown','unavailable'] }}
+          {{ states('sensor.sungrow_total_pv_generation') not in ['unknown','unavailable'] 
+          and states('sensor.sungrow_total_exported_energy') not in ['unknown','unavailable'] 
+          and states('sensor.sungrow_total_imported_energy') not in ['unknown','unavailable']
+          and states('sensor.sungrow_total_battery_charge') not in ['unknown','unavailable']
+          and states('sensor.sungrow_total_battery_discharge') not in ['unknown','unavailable'] }}
         state: >-
           {{ 
             (
-              states('sensor.total_pv_generation')|float 
-              - states('sensor.total_exported_energy')|float 
-              + states('sensor.total_imported_energy')|float 
-              - states('sensor.total_battery_charge')|float 
-              + states('sensor.total_battery_discharge')|float
+              states('sensor.sungrow_total_pv_generation')|float 
+              - states('sensor.sungrow_total_exported_energy')|float 
+              + states('sensor.sungrow_total_imported_energy')|float 
+              - states('sensor.sungrow_total_battery_charge')|float 
+              + states('sensor.sungrow_total_battery_discharge')|float
             )
           }}
 
@@ -2183,13 +2183,13 @@ template:
             # "Microgid" :8
           fallback: "Self-consumption mode (default)"
         options: "{{ map.keys() | list | tojson }}" # get option names from map keys
-        availability: "{{ states('sensor.ems_mode_selection_raw') | is_number }}"
+        availability: "{{ states('sensor.sungrow_ems_mode_selection_raw') | is_number }}"
         # modbus --> UI (raw value --> option)
         state: >-
           {# workaround for limited jinja python skills to reverse-search the map #}
           {# create a mutable namespace with default fallback #}
           {% set ns = namespace(result=fallback) %}
-          {% set regVal = states('sensor.ems_mode_selection_raw') | int %}
+          {% set regVal = states('sensor.sungrow_ems_mode_selection_raw') | int %}
           {# search in map inverted #}
           {% for key, value in map.items() %}
             {% if value == regVal %}
@@ -2211,10 +2211,10 @@ template:
               milliseconds: 100
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.ems_mode_selection_raw
+              entity_id: sensor.sungrow_ems_mode_selection_raw
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.running_state_raw
+              entity_id: sensor.sungrow_running_state_raw
 
       - name: Sungrow Battery forced charge discharge
         unique_id: uid_battery_forced_charge_discharge
@@ -2226,13 +2226,13 @@ template:
             "Forced discharge": 0xBB
           fallback: "Stop (default)"
         options: "{{ map.keys() | list | tojson }}" # get option names from map keys
-        availability: "{{ states('sensor.battery_forced_charge_discharge_cmd_raw') | is_number }}"
+        availability: "{{ states('sensor.sungrow_battery_forced_charge_discharge_cmd_raw') | is_number }}"
         # modbus --> UI (raw value --> option)
         state: >-
           {# workaround for limited jinja python skills to reverse-search the map #}
           {# create a mutable namespace with default fallback #}
           {% set ns = namespace(result=fallback) %}
-          {% set regVal = states('sensor.battery_forced_charge_discharge_cmd_raw') | int %}
+          {% set regVal = states('sensor.sungrow_battery_forced_charge_discharge_cmd_raw') | int %}
           {# search in map inverted #}
           {% for key, value in map.items() %}
             {% if value == regVal %}
@@ -2254,7 +2254,7 @@ template:
               milliseconds: 100
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.battery_forced_charge_discharge_cmd_raw
+              entity_id: sensor.sungrow_battery_forced_charge_discharge_cmd_raw
           - action: homeassistant.update_entity
             target:
               entity_id: sensor.running_state_raw
@@ -2270,13 +2270,13 @@ template:
             "Disabled": 3
           fallback: "Disabled"
         options: "{{ map.keys() | list | tojson }}" # get option names from map keys
-        availability: "{{ states('sensor.load_adjustment_mode_selection_raw') | is_number }}"
+        availability: "{{ states('sensor.sungrow_load_adjustment_mode_selection_raw') | is_number }}"
         # modbus --> UI (raw value --> option)
         state: >-
           {# workaround for limited jinja python skills to reverse-search the map #}
           {# create a mutable namespace with default fallback #}
           {% set ns = namespace(result=fallback) %}
-          {% set regVal = states('sensor.load_adjustment_mode_selection_raw') | int %}
+          {% set regVal = states('sensor.sungrow_load_adjustment_mode_selection_raw') | int %}
           {# search in map inverted #}
           {% for key, value in map.items() %}
             {% if value == regVal %}
@@ -2298,7 +2298,7 @@ template:
               milliseconds: 100
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.load_adjustment_mode_selection_raw
+              entity_id: sensor.sungrow_load_adjustment_mode_selection_raw
 
 automation:
   - id: "automation_sungrow_enable_danger_mode_auto_reset"
@@ -2328,12 +2328,12 @@ automation:
     description: "When scenes with max export power are activated, set export limit to maximum as reported by the inverter"
     triggers:
       - platform: state
-        entity_id: scene.max_export_power
+        entity_id: scene.sungrow_max_export_power
     conditions: []
     action:
       - service: number.set_value
         target:
-          entity_id: number.export_power_limit
+          entity_id: number.sungrow_export_power_limit
         data:
           value: "{{ states('sensor.export_power_limit_max') | int(0) }}"
     mode: single
@@ -2343,12 +2343,12 @@ automation:
     description: "When scenes with max battery discharge are activated, set battery discharge limit to sungrow_modbus_battery_max_power defined in secret"
     triggers:
       - platform: state
-        entity_id: scene.self_consumption_mode_max_battery_discharge
+        entity_id: scene.sungrow_self_consumption_mode_max_battery_discharge
     conditions: []
     action:
       - service: number.set_value
         target:
-          entity_id: number.battery_max_discharge_power
+          entity_id: number.sungrow_battery_max_discharge_power
         data:
           value: !secret sungrow_modbus_battery_max_power
     mode: single
