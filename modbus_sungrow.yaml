@@ -1577,7 +1577,7 @@ template:
           # manually refresh modbus register
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.battery_min_soc
+              entity_id: sensor.sungrow_battery_min_soc
 
       - name: Sungrow Battery Max Soc
         unique_id: uid_battery_max_soc
@@ -1747,8 +1747,8 @@ template:
       - name: Sungrow Export power limit
         unique_id: uid_export_power_limit
         unit_of_measurement: W
-        min: "{{ states('sensor.export_power_limit_min') }}"
-        max: "{{ states('sensor.export_power_limit_max') }}"
+        min: "{{ states('sensor.sungrow_export_power_limit_min') }}"
+        max: "{{ states('sensor.sungrow_export_power_limit_max') }}"
         step: 100
         availability: "{{ states('sensor.sungrow_export_power_limit')|is_number and states('sensor.sungrow_export_power_limit_min')|is_number and states('sensor.sungrow_export_power_limit_max')|is_number }}"
         # modbus --> UI
@@ -2257,7 +2257,7 @@ template:
               entity_id: sensor.sungrow_battery_forced_charge_discharge_cmd_raw
           - action: homeassistant.update_entity
             target:
-              entity_id: sensor.running_state_raw
+              entity_id: sensor.sungrow_running_state_raw
 
       - name: Sungrow Load adjustment mode
         unique_id: uid_load_adjustment_mode
@@ -2335,7 +2335,7 @@ automation:
         target:
           entity_id: number.sungrow_export_power_limit
         data:
-          value: "{{ states('sensor.export_power_limit_max') | int(0) }}"
+          value: "{{ states('sensor.sungrow_export_power_limit_max') | int(0) }}"
     mode: single
 
   - id: "automation_sungrow_self_consumption_mode_max_battery_discharge_scene_sets_rated_limit"
@@ -2356,42 +2356,42 @@ automation:
 scene:
   - name: Sungrow Self-Consumption Mode (max battery discharge)
     entities:
-      select.ems_mode: "Self-consumption mode (default)"
-      select.battery_forced_charge_discharge: "Stop (default)"
+      select.sungrow_ems_mode: "Self-consumption mode (default)"
+      select.sungrow_battery_forced_charge_discharge: "Stop (default)"
       # Scenes don't resolve secrets and don't render templates, so we can use neither a sensor nor a secret as the target state here.
       # Instead, turning on this scene triggers the automation automation_sungrow_self_consumption_mode_max_battery_discharge_scene_sets_rated_limit which uses the sungrow_modbus_battery_max_power secret
 
   - name: Sungrow Self-Consumption Mode (no battery discharge)
     entities:
-      select.ems_mode: "Self-consumption mode (default)"
-      select.battery_forced_charge_discharge: "Stop (default)"
-      number.battery_max_discharge_power: "10" # set to minimum to disable discharging
+      select.sungrow_ems_mode: "Self-consumption mode (default)"
+      select.sungrow_battery_forced_charge_discharge: "Stop (default)"
+      number.sungrow_battery_max_discharge_power: "10" # set to minimum to disable discharging
 
   - name: Sungrow Zero Export Power
     entities:
-      switch.export_power_limit: "on"
-      number.export_power_limit: "0"
+      switch.sungrow_export_power_limit: "on"
+      number.sungrow_export_power_limit: "0"
 
   - name: Sungrow Max Export Power
     entities:
-      switch.export_power_limit: "on"
+      switch.sungrow_export_power_limit: "on"
       # scripts don't render templates :/
-      # number.export_power_limit is set by an automation
+      # number.sungrow_export_power_limit is set by an automation
 
   - name: Sungrow Battery Bypass Mode
     entities:
-      select.ems_mode: "Forced mode"
-      select.battery_forced_charge_discharge: "Stop (default)"
+      select.sungrow_ems_mode: "Forced mode"
+      select.sungrow_battery_forced_charge_discharge: "Stop (default)"
 
   - name: Sungrow Battery Forced Discharge
     entities:
-      select.ems_mode: "Forced mode"
-      select.battery_forced_charge_discharge: "Forced discharge"
+      select.sungrow_ems_mode: "Forced mode"
+      select.sungrow_battery_forced_charge_discharge: "Forced discharge"
 
   - name: Sungrow Battery Forced Charge
     entities:
-      select.ems_mode: "Forced mode"
-      select.battery_forced_charge_discharge: "Forced charge"
+      select.sungrow_ems_mode: "Forced mode"
+      select.sungrow_battery_forced_charge_discharge: "Forced charge"
       # BUG: 2026-01-10. Deactivated for now, see issue #643
       # https://github.com/mkaiser/Sungrow-SHx-Inverter-Modbus-Home-Assistant/issues/643
-      # switch.forced_startup_under_low_soc_standby: "on" # in case inverter is in standby due to low soc
+      # switch.sungrow_forced_startup_under_low_soc_standby: "on" # in case inverter is in standby due to low soc
